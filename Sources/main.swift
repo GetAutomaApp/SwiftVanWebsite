@@ -23,7 +23,7 @@ nonisolated(unsafe) let projects = State([
         description:
             "Automation-first platform and tooling focused on reducing friction in real workflows.",
         image: "/assets/getautoma.png",
-        github: "https://github.com/adoniscodes/GetAutomaApp",
+        github: "https://github.com/GetAutomaApp",
         website: "https://getautoma.app",
     ),
     Project(

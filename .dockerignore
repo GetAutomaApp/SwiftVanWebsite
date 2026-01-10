@@ -1,0 +1,157 @@
+# flyctl launch added from .build/checkouts/JavaScriptKit/.gitignore
+.build/checkouts/JavaScriptKit/**/dist
+.build/checkouts/JavaScriptKit/**/node_modules
+.build/checkouts/JavaScriptKit/**/.DS_Store
+.build/checkouts/JavaScriptKit/**/.build
+.build/checkouts/JavaScriptKit/Packages
+.build/checkouts/JavaScriptKit/*.xcodeproj
+.build/checkouts/JavaScriptKit/**/xcuserdata
+.build/checkouts/JavaScriptKit/**/.swiftpm
+.build/checkouts/JavaScriptKit/**/.vscode
+.build/checkouts/JavaScriptKit/**/Examples/*/Bundle
+.build/checkouts/JavaScriptKit/**/Examples/*/package-lock.json
+.build/checkouts/JavaScriptKit/**/Package.resolved
+.build/checkouts/JavaScriptKit/**/Plugins/BridgeJS/Sources/JavaScript/package-lock.json
+.build/checkouts/JavaScriptKit/**/Plugins/BridgeJS/Tests/BridgeJSToolTests/__Snapshots__/**/*.actual
+.build/checkouts/JavaScriptKit/**/bridge-js.config.local.json
+.build/checkouts/JavaScriptKit/**/_site
+
+# flyctl launch added from .build/checkouts/JavaScriptKit/Runtime/.gitignore
+.build/checkouts/JavaScriptKit/Runtime/lib
+.build/checkouts/JavaScriptKit/Runtime/node_modules
+
+# flyctl launch added from .build/checkouts/SwiftVan/.gitignore
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## User settings
+.build/checkouts/SwiftVan/**/xcuserdata
+
+## Obj-C/Swift specific
+.build/checkouts/SwiftVan/**/*.hmap
+
+## App packaging
+.build/checkouts/SwiftVan/**/*.ipa
+.build/checkouts/SwiftVan/**/*.dSYM.zip
+.build/checkouts/SwiftVan/**/*.dSYM
+
+## Playgrounds
+.build/checkouts/SwiftVan/**/timeline.xctimeline
+.build/checkouts/SwiftVan/**/playground.xcworkspace
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+# Package.resolved
+# *.xcodeproj
+#
+# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
+# hence it is not needed unless you have added a package configuration file to your project
+# .swiftpm
+
+.build/checkouts/SwiftVan/**/.build
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+#
+# Pods/
+#
+# Add this line if you want to avoid checking in source code from the Xcode workspace
+# *.xcworkspace
+
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+.build/checkouts/SwiftVan/**/Carthage/Build
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo.
+# Instead, use fastlane to re-generate the screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+.build/checkouts/SwiftVan/**/fastlane/report.xml
+.build/checkouts/SwiftVan/**/fastlane/Preview.html
+.build/checkouts/SwiftVan/**/fastlane/screenshots/**/*.png
+.build/checkouts/SwiftVan/**/fastlane/test_output
+
+# Logs
+.build/checkouts/SwiftVan/**/logs
+.build/checkouts/SwiftVan/**/*.log
+.build/checkouts/SwiftVan/**/npm-debug.log*
+.build/checkouts/SwiftVan/**/yarn-debug.log*
+.build/checkouts/SwiftVan/**/yarn-error.log*
+.build/checkouts/SwiftVan/**/lerna-debug.log*
+
+# Dependencies
+.build/checkouts/SwiftVan/**/node_modules
+
+# Production
+.build/checkouts/SwiftVan/build
+.build/checkouts/SwiftVan/dist
+.build/checkouts/SwiftVan/public/build
+.build/checkouts/SwiftVan/public/dist
+
+# Environment variables
+.build/checkouts/SwiftVan/**/.env
+.build/checkouts/SwiftVan/**/.env.local
+.build/checkouts/SwiftVan/**/.env.development.local
+.build/checkouts/SwiftVan/**/.env.test.local
+.build/checkouts/SwiftVan/**/.env.production.local
+
+# IDE and OS specific files
+.build/checkouts/SwiftVan/**/.DS_Store
+.build/checkouts/SwiftVan/**/.vscode
+.build/checkouts/SwiftVan/**/*.sublime-project
+.build/checkouts/SwiftVan/**/*.sublime-workspace
+.build/checkouts/SwiftVan/**/.swiftpm/xcode/package.xcworkspace
+
+# flyctl launch added from .build/checkouts/swift-syntax/.gitignore
+# Ignore Swift Package Manager build artifacts directory.
+.build/checkouts/swift-syntax/**/.build
+.build/checkouts/swift-syntax/**/.*-build
+# Ignore generated Xcode projects
+.build/checkouts/swift-syntax/**/*.xcodeproj
+# Ignore SwiftPM state, such as the generated xcodeproj when opening the project directly
+.build/checkouts/swift-syntax/**/.swiftpm
+# Ignore user state in Xcode Projects
+.build/checkouts/swift-syntax/**/*.xcuserdatad
+.build/checkouts/swift-syntax/**/UserInterfaceState.xcuserstate
+.build/checkouts/swift-syntax/**/xcuserdata
+
+# Ignore VScode workspace settings and launch configurations
+.build/checkouts/swift-syntax/**/.vscode
+
+# Ignore bazel symlinks
+.build/checkouts/swift-syntax/bazel-*
+
+# Ignore cmake build configuration and output
+.build/checkouts/swift-syntax/**/build
+
+# We always build swiftSyntax of trunk dependencies. Ignore any fixed
+# dependency versions.
+.build/checkouts/swift-syntax/**/Package.resolved
+
+.build/checkouts/swift-syntax/**/.DS_Store
+.build/checkouts/swift-syntax/**/*.pyc
+
+.build/checkouts/swift-syntax/**/Tests/PerformanceTest/baselines.json
+
+# The local build of swift-format to format swift-syntax
+.build/checkouts/swift-syntax/**/.swift-format-build
+
+# flyctl launch added from .gitignore
+**/.swiftformat
+
+**/.build/**
+**/node_modules
+fly.toml
