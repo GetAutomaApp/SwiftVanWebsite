@@ -1,18 +1,31 @@
-# Base
-Automa's Base Repository used for everything!
+# SwiftVan Website
 
-# Setup
+The official website for SwiftVan - a reactive UI framework for Swift that compiles to WebAssembly.
 
-Run the following commands to setup the base of this REPO:
+## 🚀 Quick Start
+
 ```bash
-git clone --recurse-submodules --remote-submodules https://github.com/GetAutomaApp/Base.git
-cd Base
-npm run install:all
+git clone --recurse-submodules --remote-submodules https://github.com/GetAutomaApp/SwiftVanWebsite.git
+cd SwiftVanWebsite
+npm install
+npm run dev
 ```
 
-> [!NOTE]
-> This is a template repo, add any other initialization steps here please!
+The site will be available at `http://localhost:58691`
 
-> [!WARNING]
-> This REPO uses the GPL-3.0 license, this license only applies if you modify this template and intend to use this as a template repo!
-> If this repo is applied as a new project, feel free to close source it!
+## 📦 Building
+
+```bash
+npm run build:main
+```
+
+## 🛠️ Tech Stack
+
+- **SwiftVan** - Reactive UI framework
+- **Swift** - Compiled to WebAssembly
+- **CSS** - Minimal, clean design system
+
+## 📝 License
+
+Copyright (c) 2026 GetAutomaApp. All rights reserved.
+
