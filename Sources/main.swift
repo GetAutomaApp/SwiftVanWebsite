@@ -1,3 +1,8 @@
+// main.swift
+// Copyright (c) 2026 GetAutomaApp
+// All source code and related assets are the property of GetAutomaApp.
+// All rights reserved.
+
 import SwiftVan
 
 // MARK: - Models
@@ -16,7 +21,7 @@ nonisolated(unsafe) let projects = State([
     Project(
         name: "Counter App",
         description:
-            "A simple reactive counter demonstrating state management and button interactions.",
+        "A simple reactive counter demonstrating state management and button interactions.",
         image: "/assets/counterapp.png",
         github: "https://github.com/getautomaapp/swiftvanbase",
         demo: "https://swiftvanbase.fly.dev/"
@@ -24,7 +29,7 @@ nonisolated(unsafe) let projects = State([
     Project(
         name: "Portfolio",
         description:
-            "A personal portfolio demonstrating SwiftVan's capabilities.",
+        "A personal portfolio demonstrating SwiftVan's capabilities.",
         image: "/assets/simonportfolioapp.png",
         github: "https://github.com/adoniscodes/simon-portfolio",
         demo: "https://simonferns.com"
@@ -32,7 +37,7 @@ nonisolated(unsafe) let projects = State([
     Project(
         name: "Coming Soon...",
         description:
-            "SwiftVan will be evolvingn slowly but surely, stay tuned!",
+        "SwiftVan will be evolvingn slowly but surely, stay tuned!",
         image: "/assets/ellipsis.png",
         github: nil,
         demo: nil,
@@ -44,7 +49,6 @@ nonisolated(unsafe) let projects = State([
 final class Header {
     func render() -> AnyElement {
         Div(attributes: { ["className": "section header"] }) {
-
             Image(attributes: {
                 [
                     "src": "/assets/swiftvan.png",
@@ -54,26 +58,23 @@ final class Header {
             })
 
             Div(attributes: { ["className": "title"] }) {
-                Text({ "SwiftVan" })
+                Text { "SwiftVan" }
             }
 
             Div(attributes: { ["className": "subtitle"] }) {
-                Text({
+                Text {
                     "A reactive UI framework for Swift that compiles to WebAssembly. Build web apps with SwiftUI-like syntax."
-                })
+                }
             }
         }
     }
 }
-
-
 
 // MARK: - CTA Section
 
 final class CTASection {
     func render() -> AnyElement {
         Div(attributes: { ["className": "cta-buttons"] }) {
-
             HyperLink(
                 attributes: {
                     [
@@ -83,7 +84,7 @@ final class CTASection {
                     ]
                 }
             ) {
-                Text({ "🚀 Quick Start" })
+                Text { "🚀 Quick Start" }
             }
 
             HyperLink(
@@ -95,7 +96,7 @@ final class CTASection {
                     ]
                 }
             ) {
-                Text({ "📘 Documentation" })
+                Text { "📘 Documentation" }
             }
         }
     }
@@ -106,7 +107,6 @@ final class CTASection {
 final class ProjectCard {
     func render(_ project: Project) -> AnyElement {
         Div(attributes: { ["className": "project-card"] }) {
-
             Image(attributes: {
                 [
                     "src": project.image,
@@ -116,13 +116,12 @@ final class ProjectCard {
             })
 
             Div(attributes: { ["className": "project-body"] }) {
-
                 Div(attributes: { ["className": "project-title"] }) {
-                    Text({ project.name })
+                    Text { project.name }
                 }
 
                 Div(attributes: { ["className": "project-desc"] }) {
-                    Text({ project.description })
+                    Text { project.description }
                 }
 
                 Div(attributes: { ["className": "project-links"] }) {
@@ -139,7 +138,7 @@ final class ProjectCard {
                                     ]
                                 }
                             ) {
-                                Text({ "View Code" })
+                                Text { "View Code" }
                             }
                         }
                     )
@@ -157,7 +156,7 @@ final class ProjectCard {
                                     ]
                                 }
                             ) {
-                                Text({ "Live Demo" })
+                                Text { "Live Demo" }
                             }
                         }
                     )
@@ -170,9 +169,8 @@ final class ProjectCard {
 final class ProjectsSection {
     func render() -> AnyElement {
         Div(attributes: { ["className": "section projects"] }) {
-
             Div(attributes: { ["className": "section-title"] }) {
-                Text({ "Example Projects" })
+                Text { "Example Projects" }
             }
 
             ForEach(items: projects) { project in
@@ -198,4 +196,3 @@ final class App {
 
 let renderer = DomRenderer(root: App().render())
 renderer.mount()
-
