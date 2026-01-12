@@ -7,49 +7,36 @@ struct Project {
     let description: String
     let image: String
     let github: String?
-    let website: String?
-}
-
-struct Social {
-    let name: String
-    let url: String
+    let demo: String?
 }
 
 // MARK: - State
 
 nonisolated(unsafe) let projects = State([
     Project(
-        name: "GetAutoma",
+        name: "Counter App",
         description:
-            "Automation-first platform and tooling focused on reducing friction in real workflows.",
-        image: "/assets/getautoma.png",
-        github: "https://github.com/GetAutomaApp",
-        website: "https://getautoma.app",
+            "A simple reactive counter demonstrating state management and button interactions.",
+        image: "/assets/counterapp.png",
+        github: "https://github.com/getautomaapp/swiftvanbase",
+        demo: "https://swiftvanbase.fly.dev/"
     ),
     Project(
-        name: "SwiftVan",
+        name: "Portfolio",
         description:
-            "A Swift-first UI-style DSL for building websites that compile to WebAssembly.",
-        image: "/assets/swiftvan.png",
-        github: "https://github.com/GetAutomaApp/SwiftVan",
-        website: nil,
+            "A personal portfolio demonstrating SwiftVan's capabilities.",
+        image: "/assets/simonportfolioapp.png",
+        github: "https://github.com/adoniscodes/simon-portfolio",
+        demo: "https://simonferns.com"
     ),
     Project(
         name: "Coming Soon...",
         description:
-            "I'm working on some more impressive projects at the moment, can't wait to share@",
+            "SwiftVan will be evolvingn slowly but surely, stay tuned!",
         image: "/assets/ellipsis.png",
         github: nil,
-        website: nil,
+        demo: nil,
     ),
-])
-
-nonisolated(unsafe) let socials = State([
-    Social(name: "GitHub", url: "https://github.com/adoniscodes"),
-    Social(name: "YouTube", url: "https://youtube.com/@adoniscodes"),
-    Social(name: "Instagram", url: "https://instagram.com/adoniscodes_"),
-    Social(name: "Strava", url: "https://www.strava.com/athletes/196078897"),
-    Social(name: "Printables", url: "https://www.printables.com/@adoniscodes_3658566"),
 ])
 
 // MARK: - Header
@@ -58,14 +45,57 @@ final class Header {
     func render() -> AnyElement {
         Div(attributes: { ["className": "section header"] }) {
 
+            Image(attributes: {
+                [
+                    "src": "/assets/swiftvan.png",
+                    "className": "logo",
+                    "alt": "SwiftVan Logo",
+                ]
+            })
+
             Div(attributes: { ["className": "title"] }) {
-                Text({ "Simon Ferns" })
+                Text({ "SwiftVan" })
             }
 
             Div(attributes: { ["className": "subtitle"] }) {
                 Text({
-                    "I dabble in software engineering, recreational programming, 3D printing, travelling, running, and working out."
+                    "A reactive UI framework for Swift that compiles to WebAssembly. Build web apps with SwiftUI-like syntax."
                 })
+            }
+        }
+    }
+}
+
+
+
+// MARK: - CTA Section
+
+final class CTASection {
+    func render() -> AnyElement {
+        Div(attributes: { ["className": "cta-buttons"] }) {
+
+            HyperLink(
+                attributes: {
+                    [
+                        "href": "https://github.com/getautomaapp/swiftvanbase",
+                        "target": "_blank",
+                        "className": "button primary",
+                    ]
+                }
+            ) {
+                Text({ "🚀 Quick Start" })
+            }
+
+            HyperLink(
+                attributes: {
+                    [
+                        "href": "https://github.com/GetAutomaApp/SwiftVan",
+                        "target": "_blank",
+                        "className": "button",
+                    ]
+                }
+            ) {
+                Text({ "📘 Documentation" })
             }
         }
     }
@@ -81,6 +111,7 @@ final class ProjectCard {
                 [
                     "src": project.image,
                     "className": "project-image",
+                    "alt": project.name,
                 ]
             })
 
@@ -104,31 +135,31 @@ final class ProjectCard {
                                     [
                                         "href": project.github!,
                                         "target": "_blank",
-                                        "className": "button",
+                                        "className": "button primary",
                                     ]
                                 }
                             ) {
-                                Text({ "GitHub" })
+                                Text({ "View Code" })
                             }
                         }
                     )
 
                     If(
-                        { project.website != nil },
+                        { project.demo != nil },
                         states: [],
                         If: {
                             HyperLink(
                                 attributes: {
                                     [
-                                        "href": project.website!,
+                                        "href": project.demo!,
                                         "target": "_blank",
-                                        "className": "button secondary",
+                                        "className": "button",
                                     ]
                                 }
                             ) {
-                                Text({ "Website" })
+                                Text({ "Live Demo" })
                             }
-                        },
+                        }
                     )
                 }
             }
@@ -138,75 +169,14 @@ final class ProjectCard {
 
 final class ProjectsSection {
     func render() -> AnyElement {
-        Div(attributes: { ["className": "section"] }) {
+        Div(attributes: { ["className": "section projects"] }) {
 
             Div(attributes: { ["className": "section-title"] }) {
-                Text({ "Projects" })
+                Text({ "Example Projects" })
             }
 
             ForEach(items: projects) { project in
                 ProjectCard().render(project)
-            }
-        }
-    }
-}
-
-// MARK: - Socials
-
-final class SocialsSection {
-    func render() -> AnyElement {
-        Div(attributes: { ["className": "section"] }) {
-
-            Div(attributes: { ["className": "section-title"] }) {
-                Text({ "Socials" })
-            }
-
-            Div(attributes: { ["className": "socials"] }) {
-                ForEach(items: socials) { social in
-                    HyperLink(
-                        attributes: {
-                            [
-                                "href": social.url,
-                                "target": "_blank",
-                                "className": "social-link",
-                            ]
-                        }
-                    ) {
-                        Text({ social.name })
-                    }
-                }
-            }
-        }
-    }
-}
-
-// MARK: - Contact
-
-final class ContactSection {
-    func render() -> AnyElement {
-        Div(attributes: { ["className": "section contact"] }) {
-
-            Div(attributes: { ["className": "section-title"] }) {
-                Text({ "Contact" })
-            }
-
-            Div(attributes: { ["className": "contact-muted"] }) {
-                Text({
-                    "Not looking for employment. Open to collaboration and serious conversations."
-                })
-            }
-
-            Div(attributes: { ["className": "contact-email"] }) {
-                HyperLink(
-                    attributes: {
-                        [
-                            "href": "mailto:simon@simonferns.com",
-                            "className": "email-link",
-                        ]
-                    }
-                ) {
-                    Text({ "simon@simonferns.com" })
-                }
             }
         }
     }
@@ -218,9 +188,8 @@ final class App {
     func render() -> AnyElement {
         Div(attributes: { ["className": "container"] }) {
             Header().render()
-            SocialsSection().render()
+            CTASection().render()
             ProjectsSection().render()
-            ContactSection().render()
         }
     }
 }
@@ -229,3 +198,4 @@ final class App {
 
 let renderer = DomRenderer(root: App().render())
 renderer.mount()
+

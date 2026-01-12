@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "portfolio",
+    name: "website",
     dependencies: [
         .package(url: "https://github.com/GetAutomaApp/SwiftVan", branch: "main"),
         .package(url: "https://github.com/swiftwasm/JavaScriptKit.git", from: "0.36.0"),
@@ -13,7 +13,7 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .executableTarget(
-            name: "portfolio",
+            name: "website",
             dependencies: [
                 .product(name: "SwiftVan", package: "SwiftVan"),
                 .product(name: "JavaScriptKit", package: "JavaScriptKit"),

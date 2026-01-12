@@ -11,7 +11,7 @@
     "format": "swiftformat .",
     "lint": "swiftlint --config=.swiftlint.yml .",
     "update:submodules": "git submodule foreach --recursive 'branch=$(git remote show origin | awk \"/HEAD branch/ {print \\$NF}\"); git checkout $branch && git pull origin $branch' && CHANGED=$(git status --porcelain | grep '^ M \\.dotfiles' || true) && if [ -n \"$CHANGED\" ]; then npm run config; fi && git add -A && git commit -m \"chore: update submodules\" || echo 'No changes to commit'",
-    "build:main": "swift package --swift-sdk 6.1-RELEASE-wasm32-unknown-wasi js --use-cdn --product portfolio",
+    "build:main": "swift package --swift-sdk 6.1-RELEASE-wasm32-unknown-wasi js --use-cdn --product website",
     "dev": "nodemon",
     "copy:build:to:dist": "echo 'todo'",
     "copy:assets:to:dist": "",
