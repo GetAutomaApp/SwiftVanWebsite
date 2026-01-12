@@ -41,7 +41,7 @@ COPY --from=builder /app/.build ./.build
 
 # Sanity checks (fail fast)
 RUN test -f .build/plugins/PackageToJS/outputs/Package/index.js && \
-    test -f .build/plugins/PackageToJS/outputs/Package/portfolio.wasm
+    test -f .build/plugins/PackageToJS/outputs/Package/website.wasm
 
 # --------------------------------------------------
 # Stage 3: Static runtime (nginx)
